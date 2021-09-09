@@ -1,6 +1,33 @@
-/* intuitivnější box-sizing */
+/* intuitivnejsi box-sizing */
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
 /* ---------------------------------------------------- */
 
+
+.kontejner {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: 300px;
+	gap: 1px;
+}
+
+
+.foto:nth-child(5n) {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+@media (min-width: 800px) {
+	.kontejner {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
