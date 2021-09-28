@@ -1,6 +1,43 @@
 /* intuitivnější box-sizing */
-html { box-sizing: border-box; }
-*, ::before, ::after { box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
 
 /* ---------------------------------------------------- */
 
+.kontejner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 300px);
+  grid-gap: 0.3rem;
+}
+
+.fifth {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+}
+
+.tenth {
+  grid-column: 1 / span 2;
+  grid-row: 5 / span 2;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% center;
+  /*display: block;*/
+}
+
+/* ----------------- Media queries------------------------------- */
+@media (max-width: 750px) {
+  .kontejner {
+    display: block;
+  }
+}
